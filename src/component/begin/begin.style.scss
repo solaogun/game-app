@@ -1,0 +1,16 @@
+.p {
+    height: 200px;
+    width: 300px;
+    padding: 20px;
+    text-align: justify;
+    border: 1px solid;
+
+}
+
+.parent {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    // align-content: center;
+    flex-direction: column;
+}
