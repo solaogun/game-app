@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useCallback} from 'react'
 import { Redirect } from "react-router-dom"
 import ButtonPage from '../button/button.component'
 import { connect } from 'react-redux'
@@ -9,15 +9,7 @@ import { setCorrectAnswer, currentQuestion } from '../redux/quiz/quiz.action'
 
 
 class BeginGame extends React.Component {
-    // constructor() {
-    //     super()
-    //     this.state = {
-    //         questions: [],
-    //         current: 0,
-    //         answers: []
-    //     }
-    // }
-
+  
     componentDidMount() {
         fetch('https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean')
             .then(response => response.json())
