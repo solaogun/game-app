@@ -2,7 +2,6 @@ import QuizActionType from '../constants/quiz.type'
 
 const INITIAL_STATE = {
     questions: [],
-    current: 0,
     answers: []
 }
 
@@ -12,12 +11,6 @@ const quizReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state, questions: action.payload
             }
-        case QuizActionType.CURRENT_QUESTIONS:
-            return {
-                ...state,
-                current: action.payload
-            }
-
         case QuizActionType.ANSWERS_QUESTION:
             return {
                 ...state,

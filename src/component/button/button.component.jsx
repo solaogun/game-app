@@ -1,11 +1,11 @@
 import React from 'react'
 
-const ButtonPage = ({ trueSelected, falseSelected }) => (
+const ButtonPage = ({selectedAnswer}) => (
 
     <div className='button-page'>
-        <button onClick={trueSelected}> True</button>
-        <button onClick={falseSelected}> False</button>
+        <button onClick={()=>selectedAnswer(true)}> True</button>
+        <button onClick={()=>selectedAnswer(false)}> False</button>
     </div>
-)
+);
 
-export default ButtonPage
+export default ButtonPage;

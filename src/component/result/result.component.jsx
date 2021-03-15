@@ -1,50 +1,36 @@
-
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import ResultList from './resultList.component'
+import { getResult } from '../../resource/util/helpers';
 
 const ResultPage = (props) => {
-    const { questions, answers, current } = props;
+    const [result, setResult] = useState(0);
+    const { questions, answers} = useSelector((state)=> state.quiz);
 
-    let result = 0;
-    questions.forEach((question, index) => {
-        const { correct_answer } = question;
-        if (correct_answer === 'True' && answers[index] === true) result += 1;
-        if (correct_answer === 'False' && answers[index] === false) result += 1;
-    })
+    useEffect(()=>{
+        // getResult helper to calculate user score 
+        const score = getResult(questions);
+        setResult(score);
+    });
 
     return <div>
         <h1>Result Screen</h1>
         <div>
             <h2>Your Result : {result}</h2>
             {
-                questions.map((question, index) => {
-                    const answer = answers[index];
-                    const { correct_answer } = question;
-                    let got_it_right = false;
-
-                    if (correct_answer === 'True' && answer === true) got_it_right = true;
-                    if (correct_answer === 'False' && answer === false) got_it_right = true;
-
-                    return <div>
-                        <p>{question.question}</p>
-                        <h5>{got_it_right ? "Passed" : "Failed"}</h5>
-                    </div>
-
-                })
+                questions.map((question, index) => (
+                    <ul>
+                        <li key={index}>
+                            <ResultList answer={answers[index]} question={question}/>
+                        </li>
+                    </ul>
+                ))
             }
         </div>
-        <Link to='/'> Play Again</Link>
-
+        <Link to='/'>Play Again</Link>
     </div>
 
 }
 
-const mapStateToProps = ({ quiz: { questions, current, answers } }) => ({
-    questions,
-    current,
-    answers
-})
-
-
-export default connect(mapStateToProps)(ResultPage)
+export default ResultPage;
