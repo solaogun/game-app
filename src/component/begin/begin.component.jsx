@@ -1,6 +1,5 @@
 import React from 'react'
 import { Redirect } from "react-router-dom"
-import './begin.style.scss'
 import ButtonPage from '../button/button.component'
 import { connect } from 'react-redux'
 import { setQuizQuestion } from '../redux/quiz/quiz.action'

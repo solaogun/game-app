@@ -1,8 +1,7 @@
 
-import React from 'react'
-import './result.style.scss'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const ResultPage = (props) => {
     const { questions, answers, current } = props;

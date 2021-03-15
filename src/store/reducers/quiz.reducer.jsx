@@ -1,4 +1,4 @@
-import QuizActionType from './quiz.type'
+import QuizActionType from '../constants/quiz.type'
 
 const INITIAL_STATE = {
     questions: [],
@@ -8,12 +8,10 @@ const INITIAL_STATE = {
 
 const quizReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case QuizActionType.QUIZ_QUESTION:
+        case QuizActionType.FETCH_QUIZ_QUESTIONS:
             return {
                 ...state, questions: action.payload
             }
-
-
         case QuizActionType.CURRENT_QUESTIONS:
             return {
                 ...state,

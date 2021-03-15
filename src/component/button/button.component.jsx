@@ -1,5 +1,4 @@
 import React from 'react'
-import './button.style.scss'
 
 const ButtonPage = ({ trueSelected, falseSelected }) => (
 
