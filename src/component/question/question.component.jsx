@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Question = ({questions})=>(
+const Question = ({questions, current})=>(
   <div className='parent'>
     <>
-        <h1>{questions.category}</h1>
-        <p className="p">{questions.question}</p>
+        <h1>{questions[current].category}</h1>
+        <p className="p">{questions[current].question}</p>
     </>
 </div>
 );

@@ -1,4 +1,4 @@
-export const getResult = (questions) => {
+export const getResult = (questions, answers) => {
     let result = 0;
     questions.forEach((question, index) => {
         const { correct_answer } = question;

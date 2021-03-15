@@ -31,15 +31,13 @@ const BeginGame = ()=> {
     
     if (questions.length === 0) return <div>loading...</div>
     if (current === questions.length) {
-        setCurrent(0);
-        dispatch(setCorrectAnswer([]));
         return <Redirect to={{ pathname: "/result", state: { questions, answers}}}/>
     }
     return (
             <div className='begin-game'>
                 <h1> Quiz Screen </h1>
                 <span>Begin Quiz</span>
-                <Question questions={questions}/>
+                <Question questions={questions} current ={current}/>
                 <ButtonPage selectAnswer={(type)=>selectedAnswer(type)}/>
             </div>
         );

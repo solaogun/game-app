@@ -1,10 +1,10 @@
 import React from 'react'
 
-const ButtonPage = ({selectedAnswer}) => (
+const ButtonPage = ({selectAnswer}) => (
 
     <div className='button-page'>
-        <button onClick={()=>selectedAnswer(true)}> True</button>
-        <button onClick={()=>selectedAnswer(false)}> False</button>
+        <button onClick={()=>selectAnswer(true)}> True</button>
+        <button onClick={()=>selectAnswer(false)}> False</button>
     </div>
 );
 

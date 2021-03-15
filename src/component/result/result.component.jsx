@@ -10,9 +10,9 @@ const ResultPage = (props) => {
 
     useEffect(()=>{
         // getResult helper to calculate user score 
-        const score = getResult(questions);
+        const score = getResult(questions, answers);
         setResult(score);
-    });
+    },[answers, questions]);
 
     return <div>
         <h1>Result Screen</h1>

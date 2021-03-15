@@ -16,6 +16,6 @@ export const fetchQuestions = () => {
     return async (dispatch) => {
       const response = await axios.get(FETCH_QUESTIONS);
       const resData = await response.data;
-      dispatch({ type: QuizActionType.FETCH_QUIZ_QUESTIONS, payload: resData });
+      dispatch({ type: QuizActionType.FETCH_QUIZ_QUESTIONS, payload: resData.results });
     }
   };
