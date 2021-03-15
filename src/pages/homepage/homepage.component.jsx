@@ -7,7 +7,7 @@ const HomePage = () => (
         <h1> Welcome to the Trivia Challenge!</h1>
 
 
-        <p className='p3'>Your will be prsented with 10 true or false questions</p>
+        <p className='p3'>Your will be presented with 10 true or false questions</p>
 
 
         <p className='p3'>Can you score 100%</p>
